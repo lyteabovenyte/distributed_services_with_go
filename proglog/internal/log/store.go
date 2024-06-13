@@ -43,7 +43,7 @@ func (s *store) Append(p []byte) (n uint64, pos uint64, err error) {
 	if errBinWrite != nil {
 		return nil, nil, err
 	}
-	w, err := s.buf.Write(p)
+	w, err := s.buf.Write(p) // it returns the number of bytes written into buffer. (w)
 	if err != nil {
 		return nil, nil, err
 	}
